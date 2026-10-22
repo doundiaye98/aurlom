@@ -33,26 +33,23 @@ include __DIR__ . '/includes/header.php';
                 <?php echo csrf_field(); ?>
                 <h1 class="h4 mb-2">Connexion</h1>
                 <p class="text-muted">Compte client ou administrateur. La commande se valide uniquement une fois connecté.</p>
-                <div class="demo-accounts">
-                    <strong>Comptes de démo</strong>
-                    <p>Admin : <code><?php echo e(DEFAULT_ADMIN_EMAIL); ?></code> / <code><?php echo e(DEFAULT_ADMIN_PASS); ?></code></p>
-                    <p>Client : <code><?php echo e(DEFAULT_USER_EMAIL); ?></code> / <code><?php echo e(DEFAULT_USER_PASS); ?></code></p>
-                </div>
                 <?php if ($error): ?>
                     <div class="alert alert-danger"><?php echo e($error); ?></div>
                 <?php endif; ?>
                 <div class="mb-3">
                     <label class="form-label" for="email">Email</label>
-                    <input class="form-control" type="text" id="email" name="email" required autocomplete="username" value="<?php echo e($email); ?>" placeholder="<?php echo e(DEFAULT_ADMIN_EMAIL); ?>">
+                    <input class="form-control" type="email" id="email" name="email" required autocomplete="username" value="<?php echo e($email); ?>">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="password">Mot de passe</label>
                     <input class="form-control" type="password" id="password" name="password" required autocomplete="current-password">
                 </div>
                 <button class="btn btn-primary w-100" type="submit">Se connecter</button>
-                <p class="small text-center mt-3 mb-0">
-                    Pas encore de compte ? <a href="<?php echo e(url('register.php')); ?>">Créer un compte</a>
-                </p>
+                <div class="login-divider"><span>Pas encore de compte ?</span></div>
+                <a class="btn btn-outline-primary btn-create-account w-100" href="<?php echo e(url('register.php')); ?>">
+                    <i class="bi bi-person-plus" aria-hidden="true"></i>
+                    Créer un compte
+                </a>
             </form>
         </div>
     </div>

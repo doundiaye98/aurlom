@@ -5,7 +5,7 @@ define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_CHARSET', 'utf8mb4');
 
-define('SHOP_NAME', 'Aurloum');
+define('SHOP_NAME', 'Teranga Tech');
 define('SHOP_TAGLINE', 'Informatique neuf et reconditionné.');
 define('BASE_URL', '/aurloum');
 

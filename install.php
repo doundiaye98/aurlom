@@ -16,12 +16,12 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Base de données — Aurloum</title>
+    <title>Base de données — <?php echo htmlspecialchars(SHOP_NAME, ENT_QUOTES, 'UTF-8'); ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div class="container py-5" style="max-width: 620px;">
-    <h1 class="h3 mb-3">Base de données Aurloum</h1>
+    <h1 class="h3 mb-3">Base de données <?php echo htmlspecialchars(SHOP_NAME, ENT_QUOTES, 'UTF-8'); ?></h1>
     <?php if ($error): ?>
         <div class="alert alert-danger"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></div>
         <p>Vérifiez MySQL dans WAMP et les identifiants de <code>config.php</code>.</p>
@@ -40,10 +40,6 @@ try {
         <?php endif; ?>
         <a class="btn btn-dark me-2" href="index.php">Boutique</a>
         <a class="btn btn-outline-dark" href="login.php">Connexion</a>
-        <p class="small text-muted mt-3 mb-0">
-            Admin : <code><?php echo htmlspecialchars(DEFAULT_ADMIN_EMAIL, ENT_QUOTES, 'UTF-8'); ?></code> / <code><?php echo htmlspecialchars(DEFAULT_ADMIN_PASS, ENT_QUOTES, 'UTF-8'); ?></code><br>
-            Client : <code><?php echo htmlspecialchars(DEFAULT_USER_EMAIL, ENT_QUOTES, 'UTF-8'); ?></code> / <code><?php echo htmlspecialchars(DEFAULT_USER_PASS, ENT_QUOTES, 'UTF-8'); ?></code>
-        </p>
     <?php endif; ?>
 </div>
 </body>

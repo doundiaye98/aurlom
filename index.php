@@ -42,19 +42,14 @@ include __DIR__ . '/includes/header.php';
 
 <section class="hero">
     <div class="container">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-6">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-xl-6">
                 <p class="eyebrow">Boutique informatique</p>
                 <h1>PC, écrans et composants neufs ou reconditionnés.</h1>
                 <p class="lead">Chaque article reconditionné est testé en magasin. Commandez en ligne, faites-vous livrer ou retirez sur place.</p>
                 <div class="hero-cta">
                     <a href="#vitrine" class="btn btn-primary btn-lg">Voir la vitrine</a>
                     <a href="#produits" class="btn btn-outline-primary btn-lg">Catalogue</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="hero-panel">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" alt="Matériel informatique Aurloum">
                 </div>
             </div>
         </div>

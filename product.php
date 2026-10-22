@@ -74,7 +74,7 @@ include __DIR__ . '/includes/header.php';
             </div>
 
             <div class="product-info">
-                <p class="eyebrow"><?php echo e($product['category_name'] ? $product['category_name'] : 'Aurloum'); ?></p>
+                <p class="eyebrow"><?php echo e($product['category_name'] ? $product['category_name'] : SHOP_NAME); ?></p>
                 <h1><?php echo e($product['name']); ?></h1>
                 <div class="rating-line">
                     <?php if (!empty($product['review_count'])): ?>

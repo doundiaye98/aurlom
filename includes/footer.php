@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>Aurloum — revendeur informatique</span>
+            <span><?php echo e(SHOP_NAME); ?> — revendeur informatique</span>
             <span>Paiement à la réception</span>
         </div>
     </div>

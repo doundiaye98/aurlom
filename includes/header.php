@@ -17,13 +17,13 @@ $cartCount = cart_count();
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>?v=9">
+    <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>?v=12">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top navbar-aurloum">
     <div class="container nav-shell">
         <a class="navbar-brand" href="<?php echo e(url('index.php')); ?>">
-            <span class="brand-mark">A</span>
+            <span class="brand-mark">T</span>
             <span class="brand-text">
                 <?php echo e(SHOP_NAME); ?>
                 <span class="brand-sub">Informatique</span>
@@ -83,8 +83,11 @@ $cartCount = cart_count();
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(url('login.php')); ?>">Connexion</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-ghost" href="<?php echo e(url('register.php')); ?>">Créer un compte</a>
+                <li class="nav-item nav-register-item">
+                    <a class="btn btn-primary btn-register" href="<?php echo e(url('register.php')); ?>">
+                        <i class="bi bi-person-plus" aria-hidden="true"></i>
+                        <span>Créer un compte</span>
+                    </a>
                 </li>
                 <?php endif; ?>
                 <li class="nav-item d-none d-lg-block">

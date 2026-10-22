@@ -163,6 +163,44 @@ img { max-width: 100%; height: auto; }
 
 .btn-ghost:hover { background: var(--paper); color: var(--ink); }
 
+.btn-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    white-space: nowrap;
+    box-shadow: 0 5px 14px rgba(31, 78, 121, 0.18);
+}
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.btn-create-account {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 46px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
 .btn-primary {
     --bs-btn-bg: var(--navy);
     --bs-btn-border-color: var(--navy);
@@ -184,9 +222,31 @@ img { max-width: 100%; height: auto; }
 }
 
 .hero {
-    background: #fff;
-    padding: 2.5rem 0 2.2rem;
-    border-bottom: 1px solid var(--line);
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: clamp(470px, 68vh, 680px);
+    padding: 3.5rem 0;
+    background-image: url("../../img/boutique-informatique_v2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 20, 35, 0.92) 0%,
+        rgba(8, 20, 35, 0.78) 42%,
+        rgba(8, 20, 35, 0.26) 72%,
+        rgba(8, 20, 35, 0.12) 100%
+    );
 }
 
 .eyebrow {
@@ -203,10 +263,13 @@ img { max-width: 100%; height: auto; }
     line-height: 1.15;
     margin-bottom: 0.85rem;
     font-weight: 700;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
 }
 
+.hero .eyebrow { color: #b9dcff; }
+
 .hero .lead {
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.88);
     max-width: 36rem;
 }
 
@@ -217,18 +280,21 @@ img { max-width: 100%; height: auto; }
     margin-top: 1.25rem;
 }
 
-.hero-panel {
-    border-radius: 1rem;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    box-shadow: 0 16px 40px rgba(31, 42, 55, 0.08);
+.hero-cta .btn-primary {
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #fff;
+    --bs-btn-color: var(--navy-dark);
+    --bs-btn-hover-bg: #eef5fb;
+    --bs-btn-hover-border-color: #eef5fb;
+    --bs-btn-hover-color: var(--navy-dark);
 }
 
-.hero-panel img {
-    width: 100%;
-    height: min(48vw, 360px);
-    object-fit: cover;
-    display: block;
+.hero-cta .btn-outline-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-border-color: rgba(255, 255, 255, 0.75);
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-hover-color: var(--navy-dark);
 }
 
 .trust-strip {
@@ -904,8 +970,6 @@ img { max-width: 100%; height: auto; }
 .toast { background: var(--ink); color: #fff; }
 
 @media (min-width: 768px) {
-    .hero { padding: 3.2rem 0; }
-    .hero-panel img { height: 360px; }
     .product-card-image { height: 200px; }
     .trust-row {
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -954,10 +1018,27 @@ img { max-width: 100%; height: auto; }
         width: 100%;
     }
     .nav-search-item, .nav-search { width: 100%; }
-    .btn-ghost { display: inline-block; margin: 0.3rem 0 0.5rem; }
+    .nav-register-item { width: 100%; }
+    .btn-register {
+        width: 100%;
+        min-height: 48px;
+        margin: 0.45rem 0 0.25rem;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 575.98px) {
+    .hero {
+        min-height: 540px;
+        background-position: 58% center;
+    }
+    .hero::before {
+        background: linear-gradient(
+            90deg,
+            rgba(8, 20, 35, 0.92) 0%,
+            rgba(8, 20, 35, 0.76) 100%
+        );
+    }
     .hero-cta .btn { width: 100%; }
     .product-card-image { height: 124px; }
     .product-card h3 { font-size: 0.88rem; }
@@ -969,20 +1050,6 @@ img { max-width: 100%; height: auto; }
 
 @media (min-width: 1200px) {
     .cat-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
-}
-
-.demo-accounts {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 0.7rem;
-    padding: 0.85rem 1rem;
-    margin: 0 0 1.1rem;
-    font-size: 0.92rem;
-}
-.demo-accounts p { margin: 0.2rem 0 0; color: var(--muted); }
-.demo-accounts code {
-    color: var(--navy);
-    font-size: 0.9rem;
 }
 
 .admin-bar {
